@@ -1,0 +1,105 @@
+.detail-container {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+.detail-left-section {
+    display: flex;
+    background-color: var(--secondary-background-color);
+    border: 1px solid var(--background-color);
+    padding: 20px;
+    flex-direction: column;
+}
+
+.detail-head {
+    display: flex;
+    padding-bottom: 50px;
+    width: 100%;
+}
+
+.detail-logo {
+    width: 120px;
+    height: auto;
+}
+
+.detail-head-title {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.detail-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-rating {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.detail-rating-icon {
+    height: 30px;
+}
+
+.header-rating-number {
+    border-radius: 1000px;
+    background-color: var(--background-color);
+    margin-left: 10px;
+    padding: 2px 6px;
+}
+
+.detail-right-section {
+    padding: 20px;
+}
+
+.download-button {
+    width: 100%;
+    background-color: var(--global-text-color);
+    border: none;
+    color: var(--secondary-background-color);
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.add-to-cast-button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-detail a {
+    color: var(--global-text-color)
+}
+
+.pulisher-header {
+    display: flex;
+    height: 80px;
+}
+
+.pulisher-title-container {
+    padding-left: 10px;
+    align-self: center;
+}
+
+.pulisher-title-container h3 {
+    color: var(--global-text-color);
+    margin-bottom: -5px;
+}

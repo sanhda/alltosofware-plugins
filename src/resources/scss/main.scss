@@ -1,0 +1,17 @@
+.main-container {
+    background-color: var(--background-color);
+    padding-top: 50px;
+}
+
+.main {
+    display: grid;
+    max-width: 1200px;
+    grid-template-columns: 200px 1fr;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.right-section {
+    border-left: 1px solid var(--global-border-color);
+    padding-left: 20px;
+}

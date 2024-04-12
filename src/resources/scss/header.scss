@@ -1,0 +1,41 @@
+.header-container {
+    background-color: var(--secondary-background-color);
+    height: 80px;
+    align-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.allto-logo {
+    height: 50px;
+}
+
+.header-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header a {
+    color: var(--global-text-color);
+}
+
+.more-plugin {
+    margin-right: 10px;
+}
+
+.login {
+    padding-left: 10px;
+    border-left: 1px solid var(--global-border-color);
+}
+
+.header a:hover {
+    font-weight: 700;
+}

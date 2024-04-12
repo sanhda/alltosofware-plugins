@@ -1,0 +1,29 @@
+body {
+    font-family: Tahoma, sans-serif, Helvetica, Arial;;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 14px;
+    background-color: var(--background-color);
+}
+
+:root {
+    --background-color: #f5f5f5;
+    --secondary-background-color: white;
+    --global-text-color: #4054b2;
+    --global-color: #4054b2;
+    --global-border-color: rgba(60, 60, 60, 0.25);
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    color: black;
+}
