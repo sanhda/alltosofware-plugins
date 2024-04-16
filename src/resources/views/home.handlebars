@@ -7,6 +7,9 @@
     <div class="main">
         <div class="left-section">
             <ul class="categories">
+                {{#each categories}}
+                    <li><a href="">{{this.name}}</a></li>
+                {{/each}}
             </ul>
         </div>
 
@@ -15,12 +18,33 @@
                 <input class="search-bar" type="text" placeholder="Search pythonpart here...">
             </div>
             <div class="content-section">
-                <div class="products">
-                    
+                <div class="products" data-products="{{products}}">
+                    {{#each products}}
+                        <div class="product">
+                            <a href="/detail?id={{this._id}}">
+                                <div class="product-header">
+                                <img src="../../data/products/{{this.folder}}/images/{{this.logo}}" alt="">
+                                <h3>{{this.name}}</h3>
+                            </div>
+
+                            <div class="product-description">
+                                {{this.title}}
+                            </div>
+
+                            <div class="product-rating">
+                                <img class="rating-icon" src="./img/ratings/rating-{{this.rating-stars}}.png" alt="">
+                                <p class="rating-number">{{this.rating-count}}</p>
+                            </div>
+
+                            <p class="product-price">Trial</p>
+                            </a>
+                            
+                        </div>
+                    {{/each}}
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script type="module" src="scripts/home.js"></script>
+{{!-- <script type="module" src="scripts/render/render-home.js"></script> --}}

@@ -1,5 +1,7 @@
+@import "_variables";
+
 footer {
-    background-color: var(--global-text-color);
+    background-color: $global-text-color;
 }
 
 .footer-container {
@@ -8,7 +10,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--global-text-color);
+    background-color: $global-text-color;
     padding: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -23,7 +25,7 @@ footer {
 }
 
 .right-footer h3 {
-    color: var(--secondary-background-color)
+    color: $secondary-background-color;
 }
 
 .social-media {
@@ -46,7 +48,7 @@ footer {
 }
 
 .social-media li a i {
-    color: var(--global-text-color);
+    color: $global-text-color;
     font-size: 18px;
 }
 

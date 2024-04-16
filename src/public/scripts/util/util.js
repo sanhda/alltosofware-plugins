@@ -1,4 +1,4 @@
-import { products } from "/data/products.js"
+import { products } from '/data/products.js';
 
 export function findProductById(id) {
     for (let product of products) {

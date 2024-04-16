@@ -1,0 +1,63 @@
+.wizard-content {
+  background-color: white;
+  padding: 20px;
+  padding-top: 10px;
+  border: 1px solid #bbb; }
+  .wizard-content h4, .wizard-content .no_float {
+    color: #29abe2;
+    font-size: 14px;
+    margin: 0;
+    margin-top: 10px; }
+
+.explanation {
+  font-size: 11px;
+  color: #666; }
+
+.required {
+  color: red; }
+
+textarea, input[type="text"] {
+  width: 100%;
+  border: 1px solid #bbb;
+  padding: 2px;
+  display: block;
+  font-size: 14px;
+  margin: 0; }
+
+.flat-button {
+  color: #29abe2;
+  border: 1px #29abe2 solid;
+  padding: 0 10px;
+  cursor: default;
+  font-size: 12px;
+  display: inline-block;
+  margin: 0;
+  text-decoration: none !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 6px;
+  transition: all .3s ease-in-out;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  border: 1px #29abe2 solid;
+  margin-right: 5px;
+  height: 25px;
+  width: 150px;
+  z-index: 0; }
+
+.file-info .file-name {
+  max-width: 135px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.file {
+  position: relative;
+  padding: 4px 4px 4px 0;
+  min-height: 25px;
+  margin: 5px 0; }
+
+.file-info {
+  color: #29abe2;
+  font-size: 12px;
+  position: relative; }

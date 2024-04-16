@@ -1,12 +1,14 @@
+@import "_variables";
+
 .categories {
-    border-bottom: 1px solid var(--global-border-color);
+    border-bottom: 1px solid $global-border-color;
     padding-bottom: 20px;
     padding-left: 0;
     margin-right: 20px;
 }
 
 .categories h2 {
-    color: var(--global-text-color);
+    color: $global-text-color;
     margin-top: -10px;
 }
 
@@ -15,7 +17,7 @@
 }
 
 .categories li a {
-    color: var(--global-text-color);
+    color: $global-text-color;
 }
 
 .categories li a:hover {

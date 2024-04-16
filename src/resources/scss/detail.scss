@@ -1,17 +1,22 @@
+@import "_variables";
+
 .detail-container {
     display: grid;
-    grid-template-columns: 1fr 400px;
+    grid-template-columns: 1fr 350px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1200px;
+    max-width: 1400px;
+    margin-top: 100px;
+    padding-bottom: 100px;
 }
 
 .detail-left-section {
     display: flex;
-    background-color: var(--secondary-background-color);
-    border: 1px solid var(--background-color);
+    background-color: $secondary-background-color;
+    border: 1px solid $background-color;
     padding: 20px;
     flex-direction: column;
+    border: 1px solid $global-border-color
 }
 
 .detail-head {
@@ -21,7 +26,7 @@
 }
 
 .detail-logo {
-    width: 120px;
+    width: 100px;
     height: auto;
 }
 
@@ -29,64 +34,60 @@
     display: flex;
     flex-direction: column;
     margin-left: 20px;
+    justify-content: start;
+    align-items: flex-start;
 }
 
 .detail-rating {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.product-rating {
-    display: flex;
-    justify-content: start;
-    align-items: center;
+    justify-content: center
 }
 
 .detail-rating-icon {
-    height: 30px;
+    height: 20px;
 }
 
 .header-rating-number {
     border-radius: 1000px;
-    background-color: var(--background-color);
+    background-color: $background-color;
     margin-left: 10px;
     padding: 2px 6px;
 }
 
 .detail-right-section {
-    padding: 20px;
+    padding: 5px 20px;
 }
 
 .download-button {
     width: 100%;
-    background-color: var(--global-text-color);
+    background-color: $button-color;
     border: none;
-    color: var(--secondary-background-color);
-    padding: 5px 0;
+    color: $secondary-background-color;
+    padding: 3px 0;
     cursor: pointer;
 }
 
 .add-to-cast-button {
     margin-top: 10px;
     width: 100%;
-    padding: 5px 0;
+    padding: 3px 0;
+    border: 1px solid $global-border-color;
     cursor: pointer;
 }
 
 .info-container {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 .info-detail {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
 
-.info-detail a {
-    color: var(--global-text-color)
+    a {
+        color: $global-text-color
+    }
 }
 
 .pulisher-header {
@@ -97,9 +98,11 @@
 .pulisher-title-container {
     padding-left: 10px;
     align-self: center;
+
+    h3 {
+        color: $global-text-color;
+        margin-bottom: -5px;
+    }
 }
 
-.pulisher-title-container h3 {
-    color: var(--global-text-color);
-    margin-bottom: -5px;
-}
+

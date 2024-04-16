@@ -1,13 +1,16 @@
-const homeRouter = require('./home.js')
-const detailRouter = require('./detail.js')
+const homeRouter = require('./home.js');
+const detailRouter = require('./detail.js');
+const pulisherRouter = require('./pulisher.js');
 
 function router(app) {
-
     // [GET] detail
-    app.use('/detail', detailRouter)
+    app.use('/detail', detailRouter);
+
+    // [GET] pulisher
+    app.use('/pulisher', pulisherRouter);
 
     // [GET] home
-    app.use('/', homeRouter)
+    app.use('/', homeRouter);
 
 }
 

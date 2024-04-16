@@ -1,5 +1,7 @@
+@import "_variables";
+
 .main-container {
-    background-color: var(--background-color);
+    background-color: $background-color;
     padding-top: 50px;
 }
 
@@ -12,6 +14,6 @@
 }
 
 .right-section {
-    border-left: 1px solid var(--global-border-color);
+    border-left: 1px solid $global-border-color;
     padding-left: 20px;
 }

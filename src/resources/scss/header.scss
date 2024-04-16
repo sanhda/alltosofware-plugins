@@ -1,5 +1,7 @@
+@import "_variables";
+
 .header-container {
-    background-color: var(--secondary-background-color);
+    background-color: $secondary-background-color;
     height: 80px;
     align-content: center;
 }
@@ -24,7 +26,7 @@
 }
 
 .header a {
-    color: var(--global-text-color);
+    color: $global-text-color;
 }
 
 .more-plugin {
@@ -33,7 +35,7 @@
 
 .login {
     padding-left: 10px;
-    border-left: 1px solid var(--global-border-color);
+    border-left: 1px solid $global-border-color;
 }
 
 .header a:hover {

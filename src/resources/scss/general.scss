@@ -1,18 +1,12 @@
+@import "_variables";
+
 body {
-    font-family: Tahoma, sans-serif, Helvetica, Arial;;
+    font-family: "Artifakt Element", Arial, Verdana, sans-serif;
     margin: 0;
     box-sizing: border-box;
     font-weight: 400;
     font-size: 14px;
-    background-color: var(--background-color);
-}
-
-:root {
-    --background-color: #f5f5f5;
-    --secondary-background-color: white;
-    --global-text-color: #4054b2;
-    --global-color: #4054b2;
-    --global-border-color: rgba(60, 60, 60, 0.25);
+    background-color: $background-color;
 }
 
 a {
@@ -22,8 +16,14 @@ a {
 
 ul {
     list-style: none;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
 }
 
 p {
-    color: black;
+    color: rgb(60, 60, 60);
 }

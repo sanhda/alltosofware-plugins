@@ -1,7 +1,229 @@
 <link rel="stylesheet" href="css/detail.css">
 <link rel="stylesheet" href="/css/product.css">
+<link rel="stylesheet" href="/css/video.css">
 
 <div class="detail-container">
+    <div class="detail-left-section">
+        <div class="detail-head">
+            <img class="detail-logo" src="../../data/products/{{product.folder}}/images/{{product.logo}}" alt="">
+            <div class="detail-head-title">
+                <h3>{{product.name}}</h3>
+                <div class="detail-rating">
+                    <img class="detail-rating-icon" src="./img/ratings/rating-50.png" alt="">
+                    <p class="header-rating-number">1 review</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="description-container">
+            <hr>
+            <h4>Description</h4>
+            {{product.description}}
+        </div>
+
+        <div class="version-detail">
+            <hr>
+            <h4>About this version</h4>
+            <p>Version 1.20.4, 3/21/2024
+                <br><br>- Nested family tagging is now supported 
+                <br>- Assembly tagging is not supported 
+                <br>- Reported issues are fixed</p>
+        </div>
+
+        <div class="image-video-container">
+            <hr>
+            <h4>Screenshots and Videos</h4>
+
+            <div class="preview-content">
+                <div class="preview-container">
+                    <video id="video-viewer" width="320" height="240" controls>
+                        <source src="./mov_bbb.mp4" type="video/mp4">
+                    </video>
+                    <img id="image-viewer" src="./preview.png" alt="">
+                </div>
+
+                <div class="tumbnail-content">
+                    <div class="thumbnail-container">
+                        <ul class="thumbnail-slider">
+                            <li class="thumbnail-item">
+                                <div class="thumbnail-image-container">
+                                    <a href="">
+                                        <img src="preview1.png" alt="">
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="thumbnail-item">
+                                <div class="thumbnail-image-container">
+                                    <a href="">
+                                        <img src="preview2.png" alt="">
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="thumbnail-item">
+                                <div class="thumbnail-image-container">
+                                    <a href="">
+                                        <img src="preview3.png" alt="">
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="thumbnail-item">
+                                <div class="thumbnail-image-container">
+                                    <a href="">
+                                        <img src="preview4.png" alt="">
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="thumbnail-item">
+                                <div class="thumbnail-image-container">
+                                    <a href="">
+                                        <img src="preview5.png" alt="">
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="thumbnail-item">
+                                <div class="thumbnail-image-container">
+                                    <a href="">
+                                        <img src="preview6.png" alt="">
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="thumbnail-item">
+                                <div class="thumbnail-image-container">
+                                    <a href="">
+                                        <img src="preview5.png" alt="">
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="thumbnail-item">
+                                <div class="thumbnail-image-container">
+                                    <a href="">
+                                        <img src="preview5.png" alt="">
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="thumbnail-item">
+                                <div class="thumbnail-image-container">
+                                    <a href="">
+                                        <img src="preview5.png" alt="">
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="thumbnail-item">
+                                <div class="thumbnail-image-container">
+                                    <a href="">
+                                        <img src="preview5.png" alt="">
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="thumbnail-item">
+                                <div class="thumbnail-image-container">
+                                    <a href="">
+                                        <img src="preview5.png" alt="">
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div id="prevBtn"></div>
+                        <div id="nextBtn"></div>
+                    </div>
+                </div>
+            </div>            
+            
+        </div>
+    </div>
+    <div class="detail-right-section">
+        <h4>Trial</h4>
+        <button class="download-button">Download</button>
+        <button class="add-to-cast-button">Add to Wishlist</button>
+
+        <div class="info-container">
+            <div class="info-detail">
+                <p class="info-left">Download Size:</p>
+                <p class="info-right">15.3 MB</p>
+            </div>
+            
+            <div class="info-detail">
+                <p class="info-left">Release Date:</p>
+                <p class="info-right">4/18/2021</p>
+            </div>
+
+            <div class="info-detail">
+                <p class="info-left">Last Updated:</p>
+                <p class="info-right">3/21/2024</p>
+            </div>
+
+            <div class="info-detail">
+                <p class="info-left">Version Info:</p>
+                <p class="info-right">1.20.4</p>
+            </div>
+
+            <div class="info-detail">
+                <p class="info-left">Website:</p>
+                <a class="info-right" href="">https://alltosoftware.com</a>
+            </div>
+
+            <div class="info-detail">
+                <p class="info-left">Cust. Support:</p>
+                <a class="info-right" href="">https://alltosoftware.com</a>
+            </div>
+
+            <div>
+                <hr>
+                <br>
+                <h4>Compatible with:</h4>
+                <p>Allplan
+                    <br><b>Version:</b> 2024, 2023, 2022, 2021
+                </p>
+            </div>
+
+            <div class="pulisher-info">
+                <hr>
+                <br><br>
+                <a href="../../detail.html">
+                    <div class="pulisher-header">
+                        <img src="./data/products/allto-plugin/images/AllToLogo.png" alt="">
+                        <div class="pulisher-title-container">
+                            <h4>Allto Software</h4>
+                            <p><b>25 Apps</b></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div>
+                <br>
+                <h4>More apps from this pulisher</h4>
+                <div style="height: 150px" class="product">
+                    <a href="../../detail.html">
+                        <div class="product-header">
+                            <img src="./data/products/allto-admin/images/ALLTOAdmin.png" alt="">
+                            <h3>Allto Software</h3>
+                        </div>
+                
+                        <div class="product-rating">
+                            <img class="rating-icon" src="./img/ratings/rating-50.png" alt="">
+                            <p class="rating-number">1000</p>
+                        </div>
+                
+                        <p class="product-price">Trial</p>
+                    </a>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
 </div>
 
-<script type="module" src="scripts/detail.js"></script>
+<script src="scripts/detail.js"></script>

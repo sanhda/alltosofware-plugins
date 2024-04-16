@@ -1,41 +1,33 @@
 .header-container {
-    background-color: var(--secondary-background-color);
-    height: 80px;
-    align-content: center;
-}
+  background-color: white;
+  height: 80px;
+  align-content: center; }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto; }
 
 .allto-logo {
-    height: 50px;
-}
+  height: 50px; }
 
 .header-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .header a {
-    color: var(--global-text-color);
-}
+  color: #4054b2; }
 
 .more-plugin {
-    margin-right: 10px;
-}
+  margin-right: 10px; }
 
 .login {
-    padding-left: 10px;
-    border-left: 1px solid var(--global-border-color);
-}
+  padding-left: 10px;
+  border-left: 1px solid rgba(60, 60, 60, 0.25); }
 
 .header a:hover {
-    font-weight: 700;
-}
+  font-weight: 700; }
