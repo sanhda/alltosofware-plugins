@@ -4,6 +4,8 @@
     background-color: white;
     padding: 20px;
     padding-top: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     border: 1px solid #bbb;
 
     h4, .no_float{
@@ -34,11 +36,11 @@ textarea, input[type="text"] {
 
 .flat-button {
     color: $flat-color;
+    background-color: white;
     border: 1px $flat-color solid;
     padding: 0 10px;
     cursor: default;
     font-size: 12px;
-    display: inline-block;
     margin: 0;
     text-decoration: none!important;
     align-items: center;
@@ -46,19 +48,23 @@ textarea, input[type="text"] {
     text-align: center;
     border-radius: 6px;
     transition: all .3s ease-in-out;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.05);
     border: 1px #29abe2 solid;
     margin-right: 5px;
     height: 25px;
     width: 150px;
     z-index: 0;
+    float: left;
 }
 
-.file-info .file-name {
+.file-name, .file-size {
     max-width: 135px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    float: left;
+    padding-top: 5px;
+    color: #29abe2;
+    font-size: 12px;
 }
 
 .file {
@@ -69,7 +75,96 @@ textarea, input[type="text"] {
 }
 
 .file-info {
-    color: #29abe2;
-    font-size: 12px;
     position: relative;
+    align-content: center;
 }
+
+.clearfix {
+    display: block;
+}
+
+.right-button {
+    float: right;
+}
+
+.number-row, .description-row {
+    display: block;
+}
+
+.sub-title {
+    margin: 0;
+    width: 15%;
+}
+
+.versionNumber {
+    margin: 0;
+    margin-bottom: 1px;
+    border: 1px solid #bbb;
+    padding: 2px;
+    width: 180px;
+}
+
+.icon-thumbnail-container {
+    display: flex;
+    align-items: flex-end;
+
+    #app-icon-thumbnail {
+        border: 1px #29ABE2 solid;
+        background: #F2F2F2;
+        text-align: center;
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        position: relative;
+    }
+
+    .icon-thumbnail-buttons {
+        padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+    }
+    
+}
+
+.add-medias-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+
+    .add-video-container {
+        display: flex;
+    }
+}
+
+.thumbnail-content {
+    padding: 0;
+
+    .thumbnail-item {
+        a {
+            pointer-events:none;
+        }
+    }
+    
+    .thumbnail-item-container {
+        display: flex;
+        justify-content: center;
+    
+        button {
+            border: none;
+            width: auto;
+            justify-content: center;
+        }
+    }    
+}
+
+
+.submit {
+    float: right;
+    color: white;
+    background-color: #0696d7;
+    margin-top: 30px;
+    margin-right: -20px;
+    height: 30px;
+}
+

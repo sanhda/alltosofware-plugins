@@ -4,8 +4,13 @@ class PulisherController {
         res.send("Index")
     }
 
-    submitProduct(req, res) {
+    createProduct(req, res) {
         res.render('submit-product')
+    }
+
+    submitProduct(req, res) {
+        console.log(req.body)
+        res.send(req.body)
     }
 }
 
