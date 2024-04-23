@@ -6,18 +6,18 @@
     <form action="/pulisher/submit" enctype="multipart/form-data" method="POST">
         <h4 class="no_float"><label for="Name">App Name</label><span class="required">*</span></h4>
         <span class="explanation">Name to be displayed on the product page (50 characters).</span>
-        <input class="length_50" id="Name" name="Name" type="text" value="" />
+        <input class="length_50" id="Name" name="name" type="text" value="" />
         <span class="separator"></span>
         
         <h4 class="no_float"><label for="ShortDescription">App Short Description</label><span class="required">*</span></h4>
         <span class="explanation">Description to be displayed under the title (200 characters).</span>
-        <textarea class="length_200" cols="20" id="ShortDescription" name="ShortDescription" rows="2">
+        <textarea class="length_200" cols="20" id="ShortDescription" name="shortDescription" rows="2">
 </textarea>
         <span class="separator"></span>
 
         <h4 class="no_float"><label for="Description">App Description</label><span class="required">*</span></h4>
         <span class="explanation">Description to be displayed for this item on the product page (4000 characters).</span>
-        <textarea class="mceEditor length_50" cols="20" id="Description" name="Description" rows="2">
+        <textarea class="mceEditor length_50" cols="20" id="Description" name="description" rows="2">
 </textarea>
         <span class="separator"></span>
 
@@ -25,7 +25,7 @@
             <h4><label class="no_float">App File<span class="required">*</span></label></h4>
             <div class="clear"></div>
             <label class="blue-radiobutton">
-                <input type="radio" name="UseFileLink" value="False" checked />
+                <input type="radio" name="useFileLink" value="False" checked />
                 <span></span>
             </label>
             <label class="no_float">Upload file</label>
@@ -51,13 +51,13 @@
             <span class="separator"></span>
             <div class="clear"></div>
             <label class="blue-radiobutton">
-                <input type="radio" id="file-link" name="UseFileLink" value="True"  />
+                <input type="radio" id="file-link" name="useFileLink" value="True"  />
                 <span></span>
             </label>
             <label class="no_float">File link (Recommanded for large files)</label>
             <br />
             <span class="explanation">Share the file on your cloud storage (Dropbox, Box, etc)</span>
-            <input class="length_50" id="FileLink" name="FileLink" type="text" value="" />
+            <input class="length_50" id="FileLink" name="fileLink" type="text" value="" />
         </div>
 
         <span class="separator"></span>
@@ -68,11 +68,11 @@
                 <div class="version-editor display-table">
                     <div class="number-row">
                         <label class="sub-title explanation cell">Version Number</label>
-                        <input class="versionNumber" id="VersionNumber" name="VersionNumber" type="text" value="" />
+                        <input class="versionNumber" id="VersionNumber" name="versionNumber" type="text" value="" />
                     </div>
                     <div class="description-row">
                         <label class="sub-title explanation cell">Version Description</label>
-                        <textarea class="versionDescription length_4000 cell" cols="20" id="VersionDescription" name="VersionDescription" rows="3"></textarea>
+                        <textarea class="versionDescription length_4000 cell" cols="20" id="VersionDescription" name="versionDescription" rows="3"></textarea>
                     </div>
                 </div>
             </div>
@@ -96,128 +96,20 @@
             
         </div>
         <span class="separator"></span>
-        <label class="no_float">App Screenshot and Video</label>
+        <label class="no_float">App Screenshot</label>
         <div class="add-medias-container">
             <input type="button" class="flat-button" id="custom-images-upload" value="Add images" />
             <input style="display:none" id="images-upload" type="file" name="images" multiple>
-            <div class="add-video-container">
-                <input type="button" class="flat-button" value="Add video" />
+            <div class="add-video-container" style="display: none">
+                <input id="add-video-btn" type="button" class="flat-button" value="Add video" />
                 <input id="video-url" type="text" style="width:400px;" placeholder="Please enter video link from YouTube">
+                <input type="hidden" name="videoUrls" id="videoUrlsInput">
             </div>
         </div>
 
         <div class="thumbnail-content">
             <div class="thumbnail-container">
-                <ul class="thumbnail-slider">
-                    <li class="thumbnail-item">
-                        <div class="thumbnail-item-container">
-                            <div class="thumbnail-image-container">
-                                <a href="">
-                                    <img src="/preview1.png" alt="">
-                                </a>
-                            </div>
-                            <div><button class="flat-button">Remove</button></div>
-                        </div>
-                    </li>
-
-                    <li class="thumbnail-item">
-                        <div class="thumbnail-item-container">
-                            <div class="thumbnail-image-container">
-                                <a href="">
-                                    <img src="/preview2.png" alt="">
-                                </a>
-                            </div>
-                            <div><button class="flat-button">Remove</button></div>
-                        </div>
-                    </li>
-
-                    <li class="thumbnail-item">
-                        <div class="thumbnail-item-container">
-                            <div class="thumbnail-image-container">
-                                <a href="">
-                                    <img src="/preview2.png" alt="">
-                                </a>
-                            </div>
-                            <div><button class="flat-button">Remove</button></div>
-                        </div>
-                    </li>
-
-                    <li class="thumbnail-item">
-                        <div class="thumbnail-item-container">
-                            <div class="thumbnail-image-container">
-                                <a href="">
-                                    <img src="/preview2.png" alt="">
-                                </a>
-                            </div>
-                            <div><button class="flat-button">Remove</button></div>
-                        </div>
-                    </li>
-
-                    <li class="thumbnail-item">
-                        <div class="thumbnail-item-container">
-                            <div class="thumbnail-image-container">
-                                <a href="">
-                                    <img src="/preview2.png" alt="">
-                                </a>
-                            </div>
-                            <div><button class="flat-button">Remove</button></div>
-                        </div>
-                    </li>
-
-                    <li class="thumbnail-item">
-                        <div class="thumbnail-item-container">
-                            <div class="thumbnail-image-container">
-                                <a href="">
-                                    <img src="/preview2.png" alt="">
-                                </a>
-                            </div>
-                            <div><button class="flat-button">Remove</button></div>
-                        </div>
-                    </li>
-
-                    <li class="thumbnail-item">
-                        <div class="thumbnail-item-container">
-                            <div class="thumbnail-image-container">
-                                <a href="">
-                                    <img src="/preview2.png" alt="">
-                                </a>
-                            </div>
-                            <div><button class="flat-button">Remove</button></div>
-                        </div>
-                    </li>
-
-                    <li class="thumbnail-item">
-                        <div class="thumbnail-item-container">
-                            <div class="thumbnail-image-container">
-                                <a href="">
-                                    <img src="/preview2.png" alt="">
-                                </a>
-                            </div>
-                            <div><button class="flat-button">Remove</button></div>
-                        </div>
-                    </li>
-
-                    <li class="thumbnail-item">
-                        <div class="thumbnail-item-container">
-                            <div class="thumbnail-image-container">
-                                <a href="">
-                                    <img src="/preview2.png" alt="">
-                                </a>
-                            </div>
-                            <div><button class="flat-button">Remove</button></div>
-                        </div>
-                    </li>
-
-                    <li class="thumbnail-item">
-                        <div class="thumbnail-item-container">
-                            <div class="thumbnail-image-container">
-                                <a href="">
-                                    <img src="/preview2.png" alt="">
-                                </a>
-                            </div>
-                            <div><button class="flat-button">Remove</button></div>
-                        </div>
-                    </li>
+                <ul id="thumbnail-slider" class="thumbnail-slider">
                 </ul>
 
                 <div id="prevBtn"></div>
@@ -231,4 +123,4 @@
 </div>
 
 <script src="/scripts/detail.js"></script>
-<script type="module" src="/scripts/submitProduct.js"></script>
+<script type="module" src="/scripts/submitProductEvent.js"></script>

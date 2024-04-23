@@ -5,12 +5,12 @@
 <div class="detail-container">
     <div class="detail-left-section">
         <div class="detail-head">
-            <img class="detail-logo" src="../../data/products/{{product.folder}}/images/{{product.logo}}" alt="">
+            <img class="detail-logo" src="{{product.appIcon.0.path}}" alt="">
             <div class="detail-head-title">
                 <h3>{{product.name}}</h3>
                 <div class="detail-rating">
-                    <img class="detail-rating-icon" src="./img/ratings/rating-50.png" alt="">
-                    <p class="header-rating-number">1 review</p>
+                    <img class="detail-rating-icon" src="./img/ratings/rating-{{product.rating.stars}}.png" alt="">
+                    <p class="header-rating-number">{{product.rating.count}} review</p>
                 </div>
             </div>
         </div>
@@ -24,10 +24,8 @@
         <div class="version-detail">
             <hr>
             <h4>About this version</h4>
-            <p>Version 1.20.4, 3/21/2024
-                <br><br>- Nested family tagging is now supported 
-                <br>- Assembly tagging is not supported 
-                <br>- Reported issues are fixed</p>
+            <p>Version {{product.versionNumber}}, {{dateFormat product.createdAt 'dd/MM/yyyy'}}</p>
+            <p>{{product.versionDescription}}</p>
         </div>
 
         <div class="image-video-container">
@@ -36,102 +34,26 @@
 
             <div class="preview-content">
                 <div class="preview-container">
-                    <video id="video-viewer" width="320" height="240" controls>
-                        <source src="./mov_bbb.mp4" type="video/mp4">
+                    <video style="display: none;" id="video-viewer" width="320" height="240" controls>
+                        <source src="" type="video/mp4">
                     </video>
-                    <img id="image-viewer" src="./preview.png" alt="">
+                    <img id="image-viewer" src="{{product.images.0.path}}" alt="">
                 </div>
 
                 <div class="thumbnail-content">
                     <div class="thumbnail-container">
                         <ul class="thumbnail-slider">
-                            <li class="thumbnail-item">
-                                <div class="thumbnail-image-container">
-                                    <a href="">
-                                        <img src="/preview1.png" alt="">
-                                    </a>
-                                </div>
-                            </li>
+
+                            {{#each product.images}}
 
                             <li class="thumbnail-item">
                                 <div class="thumbnail-image-container">
-                                    <a href="">
-                                        <img src="/preview2.png" alt="">
-                                    </a>
+                                    <img class="thumbnail-image" src="{{this.path}}" alt="">
                                 </div>
                             </li>
 
-                            <li class="thumbnail-item">
-                                <div class="thumbnail-image-container">
-                                    <a href="">
-                                        <img src="/preview3.png" alt="">
-                                    </a>
-                                </div>
-                            </li>
+                            {{/each}}
 
-                            <li class="thumbnail-item">
-                                <div class="thumbnail-image-container">
-                                    <a href="">
-                                        <img src="/preview4.png" alt="">
-                                    </a>
-                                </div>
-                            </li>
-
-                            <li class="thumbnail-item">
-                                <div class="thumbnail-image-container">
-                                    <a href="">
-                                        <img src="/preview5.png" alt="">
-                                    </a>
-                                </div>
-                            </li>
-
-                            <li class="thumbnail-item">
-                                <div class="thumbnail-image-container">
-                                    <a href="">
-                                        <img src="/preview6.png" alt="">
-                                    </a>
-                                </div>
-                            </li>
-
-                            <li class="thumbnail-item">
-                                <div class="thumbnail-image-container">
-                                    <a href="">
-                                        <img src="/preview5.png" alt="">
-                                    </a>
-                                </div>
-                            </li>
-
-                            <li class="thumbnail-item">
-                                <div class="thumbnail-image-container">
-                                    <a href="">
-                                        <img src="/preview5.png" alt="">
-                                    </a>
-                                </div>
-                            </li>
-
-                            <li class="thumbnail-item">
-                                <div class="thumbnail-image-container">
-                                    <a href="">
-                                        <img src="/preview5.png" alt="">
-                                    </a>
-                                </div>
-                            </li>
-
-                            <li class="thumbnail-item">
-                                <div class="thumbnail-image-container">
-                                    <a href="">
-                                        <img src="/preview5.png" alt="">
-                                    </a>
-                                </div>
-                            </li>
-
-                            <li class="thumbnail-item">
-                                <div class="thumbnail-image-container">
-                                    <a href="">
-                                        <img src="/preview5.png" alt="">
-                                    </a>
-                                </div>
-                            </li>
                         </ul>
 
                         <div id="prevBtn"></div>
@@ -139,7 +61,6 @@
                     </div>
                 </div>
             </div>            
-            
         </div>
     </div>
     <div class="detail-right-section">
@@ -150,22 +71,22 @@
         <div class="info-container">
             <div class="info-detail">
                 <p class="info-left">Download Size:</p>
-                <p class="info-right">15.3 MB</p>
+                <p class="info-right">{{humanFileSize product.file.0.size}}</p>
             </div>
             
             <div class="info-detail">
                 <p class="info-left">Release Date:</p>
-                <p class="info-right">4/18/2021</p>
+                <p class="info-right">{{dateFormat product.createdAt 'dd/MM/yyyy'}}</p>
             </div>
 
             <div class="info-detail">
                 <p class="info-left">Last Updated:</p>
-                <p class="info-right">3/21/2024</p>
+                <p class="info-right">{{dateFormat product.updatedAt 'dd/MM/yyyy'}}</p>
             </div>
 
             <div class="info-detail">
                 <p class="info-left">Version Info:</p>
-                <p class="info-right">1.20.4</p>
+                <p class="info-right">{{product.versionNumber}}</p>
             </div>
 
             <div class="info-detail">

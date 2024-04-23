@@ -1,6 +1,8 @@
 const homeRouter = require('./home.js');
 const detailRouter = require('./detail.js');
 const pulisherRouter = require('./pulisher.js');
+const registerRouter = require('./register.js');
+const loginRouter = require('./login.js');
 
 function router(app) {
     // [GET] detail
@@ -8,6 +10,12 @@ function router(app) {
 
     // [GET] pulisher
     app.use('/pulisher', pulisherRouter);
+
+    // [GET] register
+    app.use('/register', registerRouter);
+
+    // [GET] login
+    app.use('/login', loginRouter);
 
     // [GET] home
     app.use('/', homeRouter);

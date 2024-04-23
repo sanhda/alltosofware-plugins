@@ -16,6 +16,7 @@ app.use(express.json());
 
 // static files (add path to sys)
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../')));
 
 // http logger
 app.use(morgan('combined'));
@@ -23,8 +24,14 @@ app.use(morgan('combined'));
 // router
 router(app);
 
+// handle bars supporter
+// engine.registerHelper('dateFormat', require('handlebars-dateformat'));
+
 // template engines
-app.engine('handlebars', engine());
+app.engine('handlebars', engine({
+    extname: ".handlebars",
+    helpers: require("./public/scripts/helpers.js").helpers,
+}));
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'resources', 'views'));
 

@@ -23,17 +23,17 @@
                         <div class="product">
                             <a href="/detail?id={{this._id}}">
                                 <div class="product-header">
-                                <img src="../../data/products/{{this.folder}}/images/{{this.logo}}" alt="">
+                                <img src="{{this.appIcon.0.path}}" alt="">
                                 <h3>{{this.name}}</h3>
                             </div>
 
                             <div class="product-description">
-                                {{this.title}}
+                                {{this.shortDescription}}
                             </div>
 
                             <div class="product-rating">
-                                <img class="rating-icon" src="./img/ratings/rating-{{this.rating-stars}}.png" alt="">
-                                <p class="rating-number">{{this.rating-count}}</p>
+                                <img class="rating-icon" src="./img/ratings/rating-{{this.rating.stars}}.png" alt="">
+                                <p class="rating-number">{{this.rating.count}}</p>
                             </div>
 
                             <p class="product-price">Trial</p>

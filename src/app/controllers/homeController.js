@@ -22,11 +22,6 @@ class HomeController {
             })
             
     }
-
-    // [GET] update
-    update(req, res) {
-        //productModel.updateOne({_id: '6618f8020e98c86111448f7b'}, {rating: {ratingCounts: '1000', ratingStars: '50'}})
-    }
 }
 
 module.exports = new HomeController();

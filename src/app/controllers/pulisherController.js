@@ -1,3 +1,5 @@
+const saveProduct = require('./saveProduct.js')
+
 class PulisherController {
     // [GET] home
     index(req, res) {
@@ -9,8 +11,7 @@ class PulisherController {
     }
 
     submitProduct(req, res) {
-        console.log(req.body)
-        res.send(req.body)
+        saveProduct(req, res);
     }
 }
 

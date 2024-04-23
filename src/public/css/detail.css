@@ -83,3 +83,6 @@
   .pulisher-title-container h3 {
     color: #4054b2;
     margin-bottom: -5px; }
+
+.thumbnail-image {
+  cursor: pointer; }

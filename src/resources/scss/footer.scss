@@ -2,11 +2,15 @@
 
 footer {
     background-color: $global-text-color;
+    height: 120px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 
 .footer-container {
     max-width: 1200px;
-    height: 120px;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;

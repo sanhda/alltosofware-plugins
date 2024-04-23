@@ -17,3 +17,4 @@ export function humanFileSize(bytes, dp=1) {
   
     return bytes.toFixed(0) + ' ' + units[u];
   }
+

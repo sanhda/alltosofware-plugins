@@ -7,7 +7,7 @@ function getUploader() {
         destination: function (req, file, cb) {
         
             // get path from app name
-            let path = 'uploads/products/' + req.body.Name
+            let path = 'uploads/products/' + req.body.name
 
             // Set the destination folder based on the field name
             if (file.fieldname === 'images' || file.fieldname === 'app-icon') {

@@ -28,6 +28,13 @@ function slide(direction) {
     slider.style.transform = `translateX(${currentPosition}px)`;
 }
 
+function imageSelected(event) {
+    const src = event.target.src;
+    $('#image-viewer').show();
+    $('#image-viewer').attr('src', src);
+    $('#video-viewer').hide();
+}
+
 toggleButtons()
 
 // Previous button event listener
@@ -35,3 +42,6 @@ document.querySelector('#prevBtn').addEventListener('click', () => slide(-1));
 
 // Next button event listener
 document.querySelector('#nextBtn').addEventListener('click', () => slide(1));
+
+// User select images
+$('.thumbnail-image').click(() => imageSelected(this.event));
