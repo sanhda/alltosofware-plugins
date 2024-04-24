@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const { engine } = require('express-handlebars');
 const router = require('./routes');
+const cookieParser = require('cookie-parser');
 const db = require('./config/db')
 const app = express();
 const port = 3000;
@@ -17,6 +18,12 @@ app.use(express.json());
 // static files (add path to sys)
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../')));
+
+// cookie
+app.use(cookieParser());
+
+// env
+require('dotenv').config()
 
 // http logger
 app.use(morgan('combined'));

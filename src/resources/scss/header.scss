@@ -38,6 +38,27 @@
     border-left: 1px solid $global-border-color;
 }
 
+.signup {
+    margin-right: 10px;
+}
+
 .header a:hover {
+    font-weight: 700;
+}
+
+.dropdown-toggle {
+    background-color: $global-text-color;
+}
+
+.dropdown-toggle:hover {
+    background-color: $global-text-color;
+}
+
+.dropdown-item {
+    color: $global-text-color;
+}
+
+.dropdown-item:hover {
+    color: $global-text-color;
     font-weight: 700;
 }

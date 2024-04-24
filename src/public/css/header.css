@@ -29,5 +29,21 @@
   padding-left: 10px;
   border-left: 1px solid rgba(60, 60, 60, 0.25); }
 
+.signup {
+  margin-right: 10px; }
+
 .header a:hover {
+  font-weight: 700; }
+
+.dropdown-toggle {
+  background-color: #4054b2; }
+
+.dropdown-toggle:hover {
+  background-color: #4054b2; }
+
+.dropdown-item {
+  color: #4054b2; }
+
+.dropdown-item:hover {
+  color: #4054b2;
   font-weight: 700; }

@@ -18,11 +18,4 @@
     </div>
 </div>
 
-<script>
-        // JavaScript code to extract and display error message from URL query parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const errorMessage = urlParams.get('error');
-        if (errorMessage) {
-            document.getElementById('error-message').innerText = errorMessage;
-        }
-    </script>
+<script type="module" src="scripts/login.js"></script>

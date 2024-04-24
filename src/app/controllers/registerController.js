@@ -1,6 +1,7 @@
 const UserModel = require('../models/users');
 const { registerValidator } = require('../validations/auth');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 class RegisterController {
     // [GET] register
@@ -13,11 +14,11 @@ class RegisterController {
 
         const { error } = registerValidator(req.body);
 
-        if (error) return res.status(422).send(error.details[0].message);
+        if (error) return res.status(422).json({errors: error.details[0].message});
 
         const checkEmailExist = await UserModel.findOne({ email: req.body.email });
 
-        if (checkEmailExist) return res.status(422).send('Email is exist');
+        if (checkEmailExist) return res.status(422).json({errors: 'Email is exist'});
 
         // encoding password for security
         const salt = await bcrypt.genSalt(10);
@@ -33,11 +34,17 @@ class RegisterController {
     
             // Save the user to the database
             const savedUser = await newUser.save();
-            await res.send(savedUser);
 
-        } catch (error) {
+            // generate token and save to cookie
+            const token = jwt.sign({_id: savedUser._id}, process.env.TOKEN_SECRET, { expiresIn: 60 * 60 * 24 });
+            res.cookie('auth-jwt', token, {httpOnly: true, maxAge: 1000 * 60 * 60 * 24})
+
+            // send user to front-end
+            res.status(201).json({user: savedUser._id});
+
+        } catch (err) {
             // Handle validation errors or other errors
-            res.status(400).json(error);
+            res.status(400).json({ errors: err });
         }
     }
 }

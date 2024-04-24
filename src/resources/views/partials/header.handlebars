@@ -5,8 +5,23 @@
         </a>
 
         <div class="header-right">
-            <a class="more-plugin" href="https://alltosoftware.com">MORE PLUGINS</a>
-            <a class="login" href="/login">LOGIN</a>
+            {{#if user}}
+                <a class="more-plugin" href="https://alltosoftware.com">MORE PLUGINS</a>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{user.username}}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <a href="/pulisher/create" class="dropdown-item" type="button">Pulisher</a>
+                        <a href="#" class="dropdown-item" type="button">Account Setting</a>
+                        <a href="/logout" class="dropdown-item" type="button">Sign Out</a>
+                    </div>
+                </div>
+            {{else}}
+                <a class="signup" href="/register">SIGN UP</a>
+                <a class="login" href="/login">LOGIN</a>
+            {{/if}}
+            
         </div>
     </div>
 </div>
