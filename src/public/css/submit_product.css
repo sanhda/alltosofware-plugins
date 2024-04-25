@@ -1,9 +1,7 @@
 .wizard-content {
   background-color: white;
   padding: 20px;
-  padding-top: 10px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 50px 0;
   border: 1px solid #bbb; }
   .wizard-content h4, .wizard-content .no_float {
     color: #29abe2;
@@ -80,6 +78,12 @@ textarea, input[type="text"] {
   margin: 0;
   width: 15%; }
 
+#description {
+  height: 200px; }
+
+#VersionDescription {
+  height: 100px; }
+
 .versionNumber {
   margin: 0;
   margin-bottom: 1px;
@@ -97,7 +101,10 @@ textarea, input[type="text"] {
     display: inline-block;
     width: 80px;
     height: 80px;
-    position: relative; }
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; }
   .icon-thumbnail-container .icon-thumbnail-buttons {
     padding-left: 10px;
     display: flex;
@@ -123,10 +130,16 @@ textarea, input[type="text"] {
       width: auto;
       justify-content: center; }
 
-.submit {
-  float: right;
-  color: white;
-  background-color: #0696d7;
-  margin-top: 25px;
-  margin-right: -20px;
-  height: 30px; }
+.submit-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-content: center; }
+  .submit-container #error-message {
+    color: red;
+    margin-top: auto;
+    margin-bottom: auto; }
+  .submit-container .submit {
+    color: white;
+    background-color: #0696d7;
+    height: 30px; }

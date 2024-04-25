@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/css/profile.css">
+
+<div class="container">
+    <div class="profile-container">
+        <div class="left-container">
+            <div class="icon-container">
+                <div id="profile-icon" style="background-image: {{user.icon}};"></div>
+                
+                <!-- Button -->
+                <div class="icon-button">
+                    <input type="file" id="icon" name="file" hidden="" data-default-path="/img/icons/default-avartar.png">
+                    <label class="btn" for="icon">Upload</label>
+                    <button id="remove" type="button" class="btn">Remove</button>
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="right-container">
+            <div class="infor-container">
+                <input id="userId" type="hidden" value="{{user._id}}" name="userId">
+
+                <h4><label for="userName">User Name</label></h4>
+                <input id="userName" type="text" value="{{user.username}}" name="userName">
+
+                <h4><label for="userName">Phone number</label></h4>
+                <input id="phone" type="tel" value="{{user.contact.phone}}" name="phone">
+
+                <h4><label for="userName">Website</label></h4>
+                <input id="website" type="text" value="{{user.contact.website}}" name="website">
+
+                <h4><label for="support">Support</label></h4>
+                <input id="support" type="text" value="{{user.contact.support}}" name="support">
+
+                <h4><label for="youtube"><i class="fa fa-youtube"></i> Youtube</label></h4>
+                <input id="youtube" type="text" value="{{user.social.youtube}}" name="youtube">
+
+                <h4><label for="linkedin"><i class="fa fa-linkedin"></i> Linkedin</label></h4>
+                <input id="linkedin" type="text" value="{{user.social.linkedin}}" name="linkedin">
+
+                <h4><label for="telegram"><i class="fa fa-telegram"></i> Telegram</label></h4>
+                <input id="telegram" type="text" value="{{user.social.telegram}}" name="telegram">
+            </div>
+            <button id="update-profile" type="button" class="btn">Update</button>
+            <div class="social-container">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="scripts/profile.js"></script>

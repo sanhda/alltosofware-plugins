@@ -3,21 +3,21 @@
 <link rel="stylesheet" href="/css/submit_product.css">
 
 <div class="wizard-content">
-    <form action="/pulisher/submit" enctype="multipart/form-data" method="POST">
-        <h4 class="no_float"><label for="Name">App Name</label><span class="required">*</span></h4>
+    <form id="pulisherForm" action="/pulisher" enctype="multipart/form-data" method="POST">
+        <h4 class="no_float"><label for="appName">App Name</label><span class="required">*</span></h4>
         <span class="explanation">Name to be displayed on the product page (50 characters).</span>
-        <input class="length_50" id="Name" name="name" type="text" value="" />
+        <input class="length_50" id="appName" name="appName" type="text" value=""/ required>
         <span class="separator"></span>
         
-        <h4 class="no_float"><label for="ShortDescription">App Short Description</label><span class="required">*</span></h4>
+        <h4 class="no_float"><label for="shortDescription">App Short Description</label><span class="required">*</span></h4>
         <span class="explanation">Description to be displayed under the title (200 characters).</span>
-        <textarea class="length_200" cols="20" id="ShortDescription" name="shortDescription" rows="2">
+        <textarea class="length_200" cols="20" id="shortDescription" name="shortDescription" rows="2" required>
 </textarea>
         <span class="separator"></span>
 
-        <h4 class="no_float"><label for="Description">App Description</label><span class="required">*</span></h4>
+        <h4 class="no_float"><label for="description">App Description</label><span class="required">*</span></h4>
         <span class="explanation">Description to be displayed for this item on the product page (4000 characters).</span>
-        <textarea class="mceEditor length_50" cols="20" id="Description" name="description" rows="2">
+        <textarea class="mceEditor length_50" cols="20" id="description" name="description" rows="2" required>
 </textarea>
         <span class="separator"></span>
 
@@ -33,7 +33,7 @@
                 <div class="file-info">
                     <label style="display:inline">
                         <input id="custom-file-upload" type="button" class="flat-button" value="Choose File" />
-                        <input style="display:none" id="file-upload" type="file" name="file">
+                        <input style="display:none" id="file-upload" type="file" name="file" accept="application/zip, application/rar">
                     </label>
                     <div>
                         <span id="file-name" class="file-name" style="padding-left:0;" data-default-val="No file is selected">No file is selected</span>
@@ -52,7 +52,6 @@
             <div class="clear"></div>
             <label class="blue-radiobutton">
                 <input type="radio" id="file-link" name="useFileLink" value="True"  />
-                <span></span>
             </label>
             <label class="no_float">File link (Recommanded for large files)</label>
             <br />
@@ -68,11 +67,11 @@
                 <div class="version-editor display-table">
                     <div class="number-row">
                         <label class="sub-title explanation cell">Version Number</label>
-                        <input class="versionNumber" id="VersionNumber" name="versionNumber" type="text" value="" />
+                        <input class="versionNumber" id="VersionNumber" name="versionNumber" type="text" value=""/ required>
                     </div>
                     <div class="description-row">
                         <label class="sub-title explanation cell">Version Description</label>
-                        <textarea class="versionDescription length_4000 cell" cols="20" id="VersionDescription" name="versionDescription" rows="3"></textarea>
+                        <textarea class="versionDescription length_4000 cell" cols="20" id="VersionDescription" name="versionDescription" rows="3" required></textarea>
                     </div>
                 </div>
             </div>
@@ -81,7 +80,7 @@
 
         <label class="no_float">App Icon<span class="required">*</span></label>
         <div id="app-logo" class="file-uploader">
-            <div class="file" name="Logo" data-url="/Publisher/UploadIcon" data-filetype-filters="png gif jpg jpeg" data-file-uploaded="">
+            <div class="file" name="Logo" data-url="/Publisher/UploadIcon" data-file-uploaded="">
                 <div class="icon-thumbnail-container">
                     <div id="app-icon-thumbnail">
                     </div>
@@ -89,22 +88,22 @@
                         <span class="file-name" id="app-icon-name" style="padding-left:0;" data-default-val="No file is selected">No file is selected</span>
                         <input type="button" class="flat-button" id="app-icon-remove" value="Remove"/>
                         <input type="button" id="custom-app-icon-upload" class="flat-button" value="Upload Icon"/>
-                        <input style="display:none" id="app-icon-upload" type="file" name="app-icon">
+                        <input style="display:none" id="app-icon-upload" type="file" name="appIcon" accept="image/png, image/gif, image/jpg, image/jpeg">
                     </div>
                 </div>
             </div>
             
         </div>
         <span class="separator"></span>
-        <label class="no_float">App Screenshot</label>
+        <label class="no_float">App Screenshot<span class="required">*</span></label>
         <div class="add-medias-container">
             <input type="button" class="flat-button" id="custom-images-upload" value="Add images" />
-            <input style="display:none" id="images-upload" type="file" name="images" multiple>
-            <div class="add-video-container" style="display: none">
+            <input style="display:none" id="images-upload" type="file" name="images" multiple accept="image/png, image/gif, image/jpg, image/jpeg">
+            {{!-- <div class="add-video-container" style="display: none">
                 <input id="add-video-btn" type="button" class="flat-button" value="Add video" />
                 <input id="video-url" type="text" style="width:400px;" placeholder="Please enter video link from YouTube">
                 <input type="hidden" name="videoUrls" id="videoUrlsInput">
-            </div>
+            </div> --}}
         </div>
 
         <div class="thumbnail-content">
@@ -117,10 +116,15 @@
             </div>
         </div>
         
-        <input type="submit" class="flat-button right-button submit" value="Submit">
+        <div class="submit-container">
+            <p id="error-message"></p>
+            <input type="submit" class="flat-button submit" value="Submit">
+        </div>
+        
     </form>
     
 </div>
 
 <script src="/scripts/detail.js"></script>
+<script type="module" src="/scripts/pulisher.js"></script>
 <script type="module" src="/scripts/submitProductEvent.js"></script>

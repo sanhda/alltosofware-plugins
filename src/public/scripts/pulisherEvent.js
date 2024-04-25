@@ -98,6 +98,11 @@ function appIconUploadEvent() {
 
         appIcon = files[0].name
         $('#app-icon-name')[0].textContent = appIcon
+        
+        // set avartar for app icon
+        const url = URL.createObjectURL(files[0]);
+        $("#app-icon-thumbnail").css("background-image", "url(" + url + ")");
+
     });
 
     //remove
@@ -134,6 +139,7 @@ function fileUploadEvent() {
         $('#file-size')[0].textContent = '';
         $('#custom-file-upload').show();
         $('#file-remove').hide();
+        $('#file-upload').val('')
     })
 }
 

@@ -5,7 +5,16 @@ body {
   font-weight: 400;
   font-size: 14px;
   background-color: #f5f5f5;
-  margin-bottom: 160px; }
+  min-height: 100vh; }
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; }
+
+.container {
+  margin: auto;
+  flex-grow: 1; }
 
 a {
   text-decoration: none;

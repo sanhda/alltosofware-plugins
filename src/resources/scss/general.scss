@@ -7,7 +7,19 @@ body {
     font-weight: 400;
     font-size: 14px;
     background-color: $background-color;
-    margin-bottom: 160px;  // footer height
+    min-height: 100vh;
+    
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    margin: auto;
+    flex-grow: 1;
 }
 
 a {

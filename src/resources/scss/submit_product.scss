@@ -3,9 +3,7 @@
 .wizard-content {
     background-color: white;
     padding: 20px;
-    padding-top: 10px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin: 50px 0;
     border: 1px solid #bbb;
 
     h4, .no_float{
@@ -96,6 +94,14 @@ textarea, input[type="text"] {
     width: 15%;
 }
 
+#description {
+    height: 200px;
+}
+
+#VersionDescription {
+    height: 100px;
+}
+
 .versionNumber {
     margin: 0;
     margin-bottom: 1px;
@@ -116,6 +122,10 @@ textarea, input[type="text"] {
         width: 80px;
         height: 80px;
         position: relative;
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center
     }
 
     .icon-thumbnail-buttons {
@@ -158,13 +168,22 @@ textarea, input[type="text"] {
     }    
 }
 
+.submit-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-content: center;
 
-.submit {
-    float: right;
-    color: white;
-    background-color: #0696d7;
-    margin-top: 25px;
-    margin-right: -20px;
-    height: 30px;
+    #error-message {
+        color: red;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .submit {
+        color: white;
+        background-color: #0696d7;
+        height: 30px;
+    }
 }
 

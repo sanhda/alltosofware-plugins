@@ -3,6 +3,7 @@ const detailRouter = require('./detail.js');
 const pulisherRouter = require('./pulisher.js');
 const registerRouter = require('./register.js');
 const loginRouter = require('./login.js');
+const profileRouter = require('./profile.js');
 const { checkUser } = require('../app/middlewares/authMiddleware.js')
 
 function router(app) {
@@ -25,6 +26,9 @@ function router(app) {
         res.cookie('auth-jwt', '', {maxAge: 1})
         res.redirect('/')
     });
+
+    // [GET] profile
+    app.use('/profile', profileRouter);
 
     // [GET] home
     app.use('/', homeRouter);

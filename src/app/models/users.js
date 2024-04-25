@@ -18,7 +18,10 @@ const User = new mongoose.Schema({
         type: String,
         required: true,
         minlength: 8
-    }
+    },
+    icon: {type: String, default: '/img/icons/default-avartar.png'},
+    contact: {type: mongoose.Schema.Types.Mixed, default: {phone: '', website: '', support: ''}},
+    social: {type: mongoose.Schema.Types.Mixed, default: {youtube: '', linkedin: '', telegram: ''}}
 });
 
 module.exports = mongoose.model('User', User);
