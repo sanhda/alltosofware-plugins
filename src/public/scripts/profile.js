@@ -38,7 +38,7 @@ async function updateEvent() {
     let imageUrl = $('#profile-icon').css("background-image");
     let data = { userId, userName, contact, social, icon: imageUrl };
 
-    // If validation passes, submit the form
+    // If validation passes, call post profile
     try {
         const res = await fetch('/profile', {
             method: 'POST',
@@ -46,6 +46,12 @@ async function updateEvent() {
             headers: { 'Content-Type': 'application/json',
             'Accept': 'application/json' }
         })
+
+        const res_data = await res.json();
+
+        if (!res_data.errors) {
+            window.location.replace('/')
+        }
 
     } catch (err) {
         console.log(err)

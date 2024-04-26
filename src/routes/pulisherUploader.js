@@ -10,7 +10,7 @@ function getUploader() {
             let path = 'uploads/products/' + req.body.appName
 
             // Set the destination folder based on the field name
-            if (file.fieldname === 'images' || file.fieldname === 'app-icon') {
+            if (file.fieldname === 'images' || file.fieldname === 'appIcon') {
                 path += '/images/'
             } else if (file.fieldname === 'file') {
                 path += '/file/'
@@ -39,7 +39,7 @@ function getUploader() {
 
     return upload.fields([{ name: 'images', maxCount: 10 },
     { name: 'file', maxCount: 1 },
-    { name: 'app-icon', maxCount: 1 }
+    { name: 'appIcon', maxCount: 1 }
     ])
 }
 

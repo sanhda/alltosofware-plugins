@@ -7,6 +7,37 @@ var register = function(Handlebars) {
         return format(formatString, date);
       },
 
+      ifEqual: function(arg1, arg2, options) {
+        return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+      },
+
+      multi: function(arg1, arg2) {
+        return arg1*arg2
+      },
+
+      count: function(array) {
+        try {
+          return array.length
+        }
+        catch (err) {
+          return 0
+        }
+      },
+
+      averageRating: function(reviewArray) {
+        try {
+          let total = 0;
+          reviewArray.forEach((review) => {
+            total += Number(review.rating);
+          })
+
+          return Math.round(total/reviewArray.length*2)/2*10;
+        }
+        catch (err) {
+          return 0
+        }
+      },
+
       humanFileSize: function (bytes, dp=1) {
         const thresh = 1024;
       

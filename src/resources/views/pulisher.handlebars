@@ -3,21 +3,23 @@
 <link rel="stylesheet" href="/css/submit_product.css">
 
 <div class="wizard-content">
-    <form id="pulisherForm" action="/pulisher" enctype="multipart/form-data" method="POST">
+    <form id="pulisherForm" action="/pulisher/submit" enctype="multipart/form-data" method="POST">
+        <input id="productId" type="hidden" value="{{product._id}}" name="productId">
+        <input id="userId" type="hidden" value="{{user._id}}" name="ownerId">
         <h4 class="no_float"><label for="appName">App Name</label><span class="required">*</span></h4>
         <span class="explanation">Name to be displayed on the product page (50 characters).</span>
-        <input class="length_50" id="appName" name="appName" type="text" value=""/ required>
+        <input class="length_50" id="appName" name="appName" type="text" value="{{product.appName}}"/ required>
         <span class="separator"></span>
         
         <h4 class="no_float"><label for="shortDescription">App Short Description</label><span class="required">*</span></h4>
         <span class="explanation">Description to be displayed under the title (200 characters).</span>
-        <textarea class="length_200" cols="20" id="shortDescription" name="shortDescription" rows="2" required>
+        <textarea class="length_200" cols="20" id="shortDescription" name="shortDescription" rows="2" required>{{product.shortDescription}}
 </textarea>
         <span class="separator"></span>
 
         <h4 class="no_float"><label for="description">App Description</label><span class="required">*</span></h4>
         <span class="explanation">Description to be displayed for this item on the product page (4000 characters).</span>
-        <textarea class="mceEditor length_50" cols="20" id="description" name="description" rows="2" required>
+        <textarea class="mceEditor length_50" cols="20" id="description" name="description" rows="2" required>{{product.description}}
 </textarea>
         <span class="separator"></span>
 
@@ -33,7 +35,7 @@
                 <div class="file-info">
                     <label style="display:inline">
                         <input id="custom-file-upload" type="button" class="flat-button" value="Choose File" />
-                        <input style="display:none" id="file-upload" type="file" name="file" accept="application/zip, application/rar">
+                        <input style="display:none" id="file-upload" type="file" name="file" accept="application/zip">
                     </label>
                     <div>
                         <span id="file-name" class="file-name" style="padding-left:0;" data-default-val="No file is selected">No file is selected</span>
@@ -56,7 +58,7 @@
             <label class="no_float">File link (Recommanded for large files)</label>
             <br />
             <span class="explanation">Share the file on your cloud storage (Dropbox, Box, etc)</span>
-            <input class="length_50" id="FileLink" name="fileLink" type="text" value="" />
+            <input class="length_50" id="FileLink" name="fileLink" type="text" value="{{product.fileLink}}" />
         </div>
 
         <span class="separator"></span>
@@ -67,11 +69,12 @@
                 <div class="version-editor display-table">
                     <div class="number-row">
                         <label class="sub-title explanation cell">Version Number</label>
-                        <input class="versionNumber" id="VersionNumber" name="versionNumber" type="text" value=""/ required>
+                        <input class="versionNumber" id="VersionNumber" name="versionNumber" type="text" value="{{product.versionNumber}}"/ required>
                     </div>
                     <div class="description-row">
                         <label class="sub-title explanation cell">Version Description</label>
-                        <textarea class="versionDescription length_4000 cell" cols="20" id="VersionDescription" name="versionDescription" rows="3" required></textarea>
+                        <textarea class="versionDescription length_4000 cell" cols="20" id="VersionDescription" 
+                        name="versionDescription" rows="3" required>{{product.versionDescription}}</textarea>
                     </div>
                 </div>
             </div>
@@ -127,4 +130,4 @@
 
 <script src="/scripts/detail.js"></script>
 <script type="module" src="/scripts/pulisher.js"></script>
-<script type="module" src="/scripts/submitProductEvent.js"></script>
+<script type="module" src="/scripts/pulisherEvent.js"></script>

@@ -6,6 +6,7 @@ const { requireAuth } = require('../app/middlewares/authMiddleware.js')
 const pulisherController = require('../app/controllers/PulisherController');
 
 router.get('/', requireAuth, pulisherController.createProduct);
-router.post('/', [requireAuth, uploader()], pulisherController.submitProduct);
+router.post('/download', pulisherController.downloadProduct);
+router.post('/submit', [requireAuth, uploader()], pulisherController.submitProduct);
 
 module.exports = router;

@@ -11,8 +11,6 @@ class ProfileController {
     // [POST] profile
     async update(req, res) {
         const body = req.body;
-
-        console.log(req.body)
         
         let update = {
             username : req.body.userName,
@@ -22,6 +20,8 @@ class ProfileController {
         }
 
         await UserModel.findOneAndUpdate({_id: req.body.userId}, update);
+
+        res.status(201).json({errors: ''});
     }
 }
 

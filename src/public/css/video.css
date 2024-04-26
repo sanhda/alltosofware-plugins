@@ -1,6 +1,6 @@
 .preview-content {
   position: relative;
-  padding: 20px; }
+  padding: 0; }
 
 .preview-container {
   position: relative; }
@@ -11,13 +11,13 @@
   width: 100%;
   height: auto; }
 
-#video-viewer {
+#image-viewer {
   display: none; }
 
 .thumbnail-content {
   position: relative;
   display: block;
-  padding: 0 22px; }
+  padding: 0; }
 
 .thumbnail-container {
   position: relative;

@@ -2,136 +2,164 @@
 <link rel="stylesheet" href="/css/product.css">
 <link rel="stylesheet" href="/css/video.css">
 
-<div class="detail-container">
-    <div class="detail-left-section">
-        <div class="detail-head">
-            <img class="detail-logo" src="{{product.appIcon.0.path}}" alt="">
-            <div class="detail-head-title">
-                <h3>{{product.name}}</h3>
-                <div class="detail-rating">
-                    <img class="detail-rating-icon" src="./img/ratings/rating-{{product.rating.stars}}.png" alt="">
-                    <p class="header-rating-number">{{product.rating.count}} review</p>
-                </div>
-            </div>
-        </div>
+<div class="section-container">
 
-        <div class="description-container">
-            <hr>
-            <h4>Description</h4>
-            {{product.description}}
-        </div>
+    {{!-- hidden information --}}
+    <input id="userId" type="hidden" value="{{user._id}}" name="userId">
+    <input id="userName" type="hidden" value="{{user.username}}" name="userName">
+    <input id="productId" type="hidden" value="{{product._id}}" name="productId">
 
-        <div class="version-detail">
-            <hr>
-            <h4>About this version</h4>
-            <p>Version {{product.versionNumber}}, {{dateFormat product.createdAt 'dd/MM/yyyy'}}</p>
-            <p>{{product.versionDescription}}</p>
-        </div>
-
-        <div class="image-video-container">
-            <hr>
-            <h4>Screenshots and Videos</h4>
-
-            <div class="preview-content">
-                <div class="preview-container">
-                    <video style="display: none;" id="video-viewer" width="320" height="240" controls>
-                        <source src="" type="video/mp4">
-                    </video>
-                    <img id="image-viewer" src="{{product.images.0.path}}" alt="">
-                </div>
-
-                <div class="thumbnail-content">
-                    <div class="thumbnail-container">
-                        <ul class="thumbnail-slider">
-
-                            {{#each product.images}}
-
-                            <li class="thumbnail-item">
-                                <div class="thumbnail-image-container">
-                                    <img class="thumbnail-image" src="{{this.path}}" alt="">
-                                </div>
-                            </li>
-
-                            {{/each}}
-
-                        </ul>
-
-                        <div id="prevBtn"></div>
-                        <div id="nextBtn"></div>
+    <div class="detail-container">
+        <div class="detail-left-section">
+            <div class="detail-main-section">
+                <div class="detail-head">
+                    <img class="detail-logo" src="{{product.appIcon.0.path}}" alt="">
+                    <div class="detail-head-title">
+                        <h3>{{product.appName}}</h3>
+                        <div class="detail-rating">
+                            <img class="detail-rating-icon" src="./img/ratings/rating-{{averageRating product.reviews}}.png" alt="">
+                            <p class="header-rating-number">{{count product.reviews}} review</p>
+                        </div>
                     </div>
                 </div>
-            </div>            
-        </div>
-    </div>
-    <div class="detail-right-section">
-        <h4>Trial</h4>
-        <button class="download-button">Download</button>
-        <button class="add-to-cast-button">Add to Wishlist</button>
 
-        <div class="info-container">
-            <div class="info-detail">
-                <p class="info-left">Download Size:</p>
-                <p class="info-right">{{humanFileSize product.file.0.size}}</p>
-            </div>
-            
-            <div class="info-detail">
-                <p class="info-left">Release Date:</p>
-                <p class="info-right">{{dateFormat product.createdAt 'dd/MM/yyyy'}}</p>
-            </div>
+                <div class="description-container">
+                    <hr>
+                    <h4>Description</h4>
+                    <textarea name="description" id="description" cols="30" rows="10" readonly>{{product.description}}</textarea>
+                </div>
 
-            <div class="info-detail">
-                <p class="info-left">Last Updated:</p>
-                <p class="info-right">{{dateFormat product.updatedAt 'dd/MM/yyyy'}}</p>
-            </div>
+                <div class="version-detail">
+                    <hr>
+                    <h4>About this version</h4>
+                    <p>Version {{product.versionNumber}}, {{dateFormat product.createdAt 'dd/MM/yyyy'}}</p>
+                    <p>{{product.versionDescription}}</p>
+                </div>
 
-            <div class="info-detail">
-                <p class="info-left">Version Info:</p>
-                <p class="info-right">{{product.versionNumber}}</p>
-            </div>
+                <div class="image-video-container">
+                    <hr>
+                    <h4>Screenshots and Videos</h4>
 
-            <div class="info-detail">
-                <p class="info-left">Website:</p>
-                <a class="info-right" href="">https://alltosoftware.com</a>
-            </div>
-
-            <div class="info-detail">
-                <p class="info-left">Cust. Support:</p>
-                <a class="info-right" href="">https://alltosoftware.com</a>
-            </div>
-
-            <div>
-                <hr>
-                <br>
-                <h4>Compatible with:</h4>
-                <p>Allplan
-                    <br><b>Version:</b> 2024, 2023, 2022, 2021
-                </p>
-            </div>
-
-            <div>
-                <hr>
-                <br>
-                <h4>More apps from this pulisher</h4>
-                <div style="height: 150px" class="product">
-                    <a href="../../detail.html">
-                        <div class="product-header">
-                            <img src="./data/products/allto-admin/images/ALLTOAdmin.png" alt="">
-                            <h3>Allto Software</h3>
+                    <div class="preview-content">
+                        <div class="preview-container">
+                            <video style="display: none;" id="video-viewer" width="320" height="240" controls>
+                                <source src="" type="video/mp4">
+                            </video>
+                            <img id="image-viewer" src="{{product.images.0.path}}" alt="">
                         </div>
-                
-                        <div class="product-rating">
-                            <img class="rating-icon" src="./img/ratings/rating-50.png" alt="">
-                            <p class="rating-number">1000</p>
+
+                        <div class="thumbnail-content">
+                            <div class="thumbnail-container">
+                                <ul class="thumbnail-slider">
+
+                                    {{#each product.images}}
+
+                                    <li class="thumbnail-item">
+                                        <div class="thumbnail-image-container">
+                                            <img class="thumbnail-image" src="{{this.path}}" alt="">
+                                        </div>
+                                    </li>
+
+                                    {{/each}}
+
+                                </ul>
+
+                                <div id="prevBtn"></div>
+                                <div id="nextBtn"></div>
+                            </div>
                         </div>
-                
-                        <p class="product-price">Trial</p>
-                    </a>
-                    
+                    </div>            
                 </div>
             </div>
-            
+
+            <div class="review-container">
+                <h4>Customer Reviews</h4>
+
+                {{#each product.reviews}}
+                    <div class="customer-review-container">
+                        <img class="review-rating-icon" src="./img/ratings/rating-{{multi this.rating 10}}.png" alt="">
+                        <p><strong>{{this.userName}} |</strong> April 07, 2024</p>
+                        <textarea class="review-comment" readonly>{{this.comment}}</textarea>
+                    </div>
+                {{/each}}
+
+                <form id="reviewForm" action="" method="POST">
+                    <div class="write-review-container">
+                        <textarea class="write-review-comment" name="comment" id="comment" cols="30" rows="10"></textarea>
+                        <div class="write-review-submit-container">
+                            <div class="write-review-rating-container">
+                                <div class="comment-rate product-rating-big" style="cursor: pointer; width: 90px;">
+                                    <div class="star-on star-rating" data-count="1" title="Bad"></div>
+                                    <div class="star-on star-rating" data-count="2" title="Poor"></div>
+                                    <div class="star-on star-rating" data-count="3" title="Regular"></div>
+                                    <div class="star-off star-rating" data-count="4" title="Good"></div>
+                                    <div class="star-off star-rating" data-count="5" title="Great"></div>
+                                    <input type="hidden" name="rating" id="rating" value="3">
+                                </div>
+                            </div>
+
+                            <input type="submit" id="btn-submit" class="download-button"></input>
+                        </div>
+                        <p style="color: red" id="error-message"></p>
+                        
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+
+        <div class="detail-right-section">
+            <h4>Trial</h4>
+            <button id="download-button" class="download-button">Download</button>
+            {{#ifEqual user._id product.ownerId}}
+                <a href="/pulisher?productId={{product._id}}" id="modify-button" class="download-button">Modify</a>
+            {{/ifEqual}}
+            <button class="add-to-cast-button">Add to Wishlist</button>
+
+            <div class="info-container">
+                <div class="info-detail">
+                    <p class="info-left">Download Size:</p>
+                    <p class="info-right">{{humanFileSize product.file.0.size}}</p>
+                </div>
+                
+                <div class="info-detail">
+                    <p class="info-left">Release Date:</p>
+                    <p class="info-right">{{dateFormat product.createdAt 'dd/MM/yyyy'}}</p>
+                </div>
+
+                <div class="info-detail">
+                    <p class="info-left">Last Updated:</p>
+                    <p class="info-right">{{dateFormat product.updatedAt 'dd/MM/yyyy'}}</p>
+                </div>
+
+                <div class="info-detail">
+                    <p class="info-left">Version Info:</p>
+                    <p class="info-right">{{product.versionNumber}}</p>
+                </div>
+
+                <div class="info-detail">
+                    <p class="info-left">Website:</p>
+                    <a class="info-right" href="{{product.contact.website}}">{{product.contact.website}}</a>
+                </div>
+
+                <div class="info-detail">
+                    <p class="info-left">Cust. Support:</p>
+                    <a class="info-right" href="{{product.contact.website}}">{{product.contact.website}}</a>
+                </div>
+
+                <div>
+                    <hr>
+                    <br>
+                    <h4>Compatible with:</h4>
+                    <p>Allplan
+                        <br><b>Version:</b> 2024, 2023, 2022, 2021
+                    </p>
+                </div>
+                
+            </div>
         </div>
     </div>
 </div>
+
 
 <script src="scripts/detail.js"></script>

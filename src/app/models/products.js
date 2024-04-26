@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 
 const Product = new mongoose.Schema({
-    name: {type: String, maxLength: 255},
+    ownerId: {type: String, maxLength: 255},
+    appName: {type: String, maxLength: 255},
     shortDescription: {type: String, maxLength: 1000},
     description: {type: String, maxLength: 50000},
     file: {type: [mongoose.Schema.Types.Mixed]},
@@ -12,7 +13,7 @@ const Product = new mongoose.Schema({
     appIcon: {type: [mongoose.Schema.Types.Mixed]},
     images: {type: [mongoose.Schema.Types.Mixed]},
     videos: {type: [String]},
-    rating: {type: mongoose.Schema.Types.Mixed, default: {stars: 0, count: 0}}
+    reviews: {type: [mongoose.Schema.Types.Mixed], default: []}
 }, {
     timestamps: true,
 })

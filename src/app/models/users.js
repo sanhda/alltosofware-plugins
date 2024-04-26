@@ -21,7 +21,8 @@ const User = new mongoose.Schema({
     },
     icon: {type: String, default: '/img/icons/default-avartar.png'},
     contact: {type: mongoose.Schema.Types.Mixed, default: {phone: '', website: '', support: ''}},
-    social: {type: mongoose.Schema.Types.Mixed, default: {youtube: '', linkedin: '', telegram: ''}}
+    social: {type: mongoose.Schema.Types.Mixed, default: {youtube: '', linkedin: '', telegram: ''}},
+    products: {type: [String], default: []},
 });
 
 module.exports = mongoose.model('User', User);
