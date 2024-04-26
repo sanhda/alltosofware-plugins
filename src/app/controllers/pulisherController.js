@@ -21,7 +21,7 @@ class PulisherController {
         if (!product) return res.status(422).json({errors: "Invalid product"});
 
         if (product.useFileLink == "False" && product.file.length) {
-            return res.status(200).json({})
+            return res.status(200).json({file: product.file})
 
         } else if (product.useFileLink == "True" && product.fileLink) {
             return res.status(200).json({fileUrl: product.fileLink})

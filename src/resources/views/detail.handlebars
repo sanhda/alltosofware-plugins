@@ -78,7 +78,7 @@
                 {{#each product.reviews}}
                     <div class="customer-review-container">
                         <img class="review-rating-icon" src="./img/ratings/rating-{{multi this.rating 10}}.png" alt="">
-                        <p><strong>{{this.userName}} |</strong> April 07, 2024</p>
+                        <p><strong>{{this.userName}} |</strong> {{intToDateFormat this.createdAt 'dd/MM/yyyy'}}</p>
                         <textarea class="review-comment" readonly>{{this.comment}}</textarea>
                     </div>
                 {{/each}}

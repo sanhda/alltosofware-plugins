@@ -7,6 +7,12 @@ var register = function(Handlebars) {
         return format(formatString, date);
       },
 
+      intToDateFormat: function(intDate, formatString) {
+        console.log(intDate)
+        var date = new Date(intDate);
+        return format(formatString, date);
+      },
+
       ifEqual: function(arg1, arg2, options) {
         return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
       },

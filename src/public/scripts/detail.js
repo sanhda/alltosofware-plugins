@@ -47,7 +47,7 @@ async function downloadProduct() {
             'Accept': 'application/json' }
         })
         .then(response => response.json())
-        .then(data => {
+        .then(async data => {
             if (data.errors) {
                 console.log(data.errors);
                 return
@@ -59,7 +59,8 @@ async function downloadProduct() {
                 fileUrl = data.fileUrl;
                 window.location.replace(fileUrl)
             } else if (data.file) {
-                return
+                const path = data.file[0].path;
+                window.location.replace(path)
             }
             
         })
