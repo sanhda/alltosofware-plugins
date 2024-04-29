@@ -13,7 +13,8 @@ const Product = new mongoose.Schema({
     appIcon: {type: [mongoose.Schema.Types.Mixed]},
     images: {type: [mongoose.Schema.Types.Mixed]},
     videos: {type: [String]},
-    reviews: {type: [mongoose.Schema.Types.Mixed], default: []}
+    reviews: {type: [mongoose.Schema.Types.Mixed], default: []},
+    categories: {type: [String], default: []},
 }, {
     timestamps: true,
 })

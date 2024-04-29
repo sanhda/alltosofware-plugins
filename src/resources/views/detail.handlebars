@@ -83,27 +83,29 @@
                     </div>
                 {{/each}}
 
-                <form id="reviewForm" action="" method="POST">
-                    <div class="write-review-container">
-                        <textarea class="write-review-comment" name="comment" id="comment" cols="30" rows="10"></textarea>
-                        <div class="write-review-submit-container">
-                            <div class="write-review-rating-container">
-                                <div class="comment-rate product-rating-big" style="cursor: pointer; width: 90px;">
-                                    <div class="star-on star-rating" data-count="1" title="Bad"></div>
-                                    <div class="star-on star-rating" data-count="2" title="Poor"></div>
-                                    <div class="star-on star-rating" data-count="3" title="Regular"></div>
-                                    <div class="star-off star-rating" data-count="4" title="Good"></div>
-                                    <div class="star-off star-rating" data-count="5" title="Great"></div>
-                                    <input type="hidden" name="rating" id="rating" value="3">
+                {{#if user}}
+                    <form id="reviewForm" action="" method="POST">
+                        <div class="write-review-container">
+                            <textarea class="write-review-comment" name="comment" id="comment" cols="30" rows="10"></textarea>
+                            <div class="write-review-submit-container">
+                                <div class="write-review-rating-container">
+                                    <div class="comment-rate product-rating-big" style="cursor: pointer; width: 90px;">
+                                        <div class="star-on star-rating" data-count="1" title="Bad"></div>
+                                        <div class="star-on star-rating" data-count="2" title="Poor"></div>
+                                        <div class="star-on star-rating" data-count="3" title="Regular"></div>
+                                        <div class="star-off star-rating" data-count="4" title="Good"></div>
+                                        <div class="star-off star-rating" data-count="5" title="Great"></div>
+                                        <input type="hidden" name="rating" id="rating" value="3">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <input type="submit" id="btn-submit" class="download-button"></input>
+                                <input type="submit" id="btn-submit" class="download-button"></input>
+                            </div>
+                            <p style="color: red" id="error-message"></p>
+                            
                         </div>
-                        <p style="color: red" id="error-message"></p>
-                        
-                    </div>
-                </form>
+                    </form>
+                {{/if}}
                 
             </div>
         </div>
@@ -111,7 +113,7 @@
         <div class="detail-right-section">
             <h4>Trial</h4>
             <button id="download-button" class="download-button">Download</button>
-            {{#ifEqual user._id product.ownerId}}
+            {{#ifEqual user._id owner._id}}
                 <a href="/pulisher?productId={{product._id}}" id="modify-button" class="download-button">Modify</a>
             {{/ifEqual}}
             <button class="add-to-cast-button">Add to Wishlist</button>
@@ -137,16 +139,6 @@
                     <p class="info-right">{{product.versionNumber}}</p>
                 </div>
 
-                <div class="info-detail">
-                    <p class="info-left">Website:</p>
-                    <a class="info-right" href="{{product.contact.website}}">{{product.contact.website}}</a>
-                </div>
-
-                <div class="info-detail">
-                    <p class="info-left">Cust. Support:</p>
-                    <a class="info-right" href="{{product.contact.website}}">{{product.contact.website}}</a>
-                </div>
-
                 <div>
                     <hr>
                     <br>
@@ -155,6 +147,62 @@
                         <br><b>Version:</b> 2024, 2023, 2022, 2021
                     </p>
                 </div>
+
+                <div>
+                    <hr>
+                    <br>
+                    <h4>Pulisher Information:</h4>
+                    <div class="owner-container">
+                        
+                        {{!-- pulisher icon --}}
+                        {{#if owner.icon}}
+                            <div id="owner-icon" style="background-image: {{owner.icon}};"></div>
+                        {{else}}
+                            <div id="owner-icon" style="background-image: url(/img/icons/default-avartar.png);"></div>
+                        {{/if}}
+                        <div class="owner-name-container">
+
+                            {{!-- pulisher website --}}
+                            <a href="https://{{owner.contact.website}}"><h3>{{owner.username}}</h3></a>
+                            <p class="header-rating-number">{{count owner.products}} Apps</p>
+
+                            {{!-- pulisher social --}}
+                            <div class="mid-footer">
+                                <ul class="social-media">
+                                    <li><a href="{{owner.social.youtube}}"><i class="fa fa-youtube"></i></a></li>
+                                    <li><a href="{{owner.social.linkedin}}"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="{{owner.social.telegram}}"><i class="fa fa-telegram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{#if otherProducts}}
+                <div>
+                    <hr>
+                    <br>
+                    <h4>More apps from this pulisher:</h4>
+                    <div class="more-app-container">
+                        {{otherProducts}}
+                        {{#each otherProducts}}
+                            <div class="product">
+                                <a href="/detail?id={{this._id}}">
+                                    <div class="product-header">
+                                        <img src="{{this.appIcon.0.path}}" alt="">
+                                        <h3>{{this.appName}}</h3>
+                                    </div>
+
+                                    <div class="product-rating">
+                                        <img class="rating-icon" src="./img/ratings/rating-{{averageRating this.reviews}}.png" alt="">
+                                        <p class="rating-number">{{count this.reviews}}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+                {{/if}}
                 
             </div>
         </div>

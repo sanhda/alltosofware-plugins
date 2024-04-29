@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/css/main.css">
 <link rel="stylesheet" href="/css/video.css">
-<link rel="stylesheet" href="/css/submit_product.css">
+<link rel="stylesheet" href="/css/pulisher.css">
 
 <div class="wizard-content">
     <form id="pulisherForm" action="/pulisher/submit" enctype="multipart/form-data" method="POST">
@@ -21,6 +21,15 @@
         <span class="explanation">Description to be displayed for this item on the product page (4000 characters).</span>
         <textarea class="mceEditor length_50" cols="20" id="description" name="description" rows="2" required>{{product.description}}
 </textarea>
+        <span class="separator"></span>
+
+        <h4 class="no_float"><label for="description">Category</label><span class="required">*</span></h4>
+        <span class="explanation">Select categories for your product.</span>
+        <div class="category-container">
+            {{#each categories}}
+                <label><input type="checkbox" name="categories" value="{{this.name}}">{{this.name}}</label>
+            {{/each}}
+        </div>
         <span class="separator"></span>
 
         <div id="app-file" class="file-uploader">

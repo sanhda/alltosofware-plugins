@@ -143,3 +143,15 @@ textarea, input[type="text"] {
     color: white;
     background-color: #0696d7;
     height: 30px; }
+
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 columns with equal width */
+  gap: 10px;
+  /* spacing between grid items */ }
+
+.category-container label {
+  display: block; }
+  .category-container label input {
+    margin-right: 5px; }

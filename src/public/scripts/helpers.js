@@ -37,6 +37,7 @@ var register = function(Handlebars) {
             total += Number(review.rating);
           })
 
+          if (!reviewArray.length) {return 0}
           return Math.round(total/reviewArray.length*2)/2*10;
         }
         catch (err) {
@@ -46,6 +47,8 @@ var register = function(Handlebars) {
 
       humanFileSize: function (bytes, dp=1) {
         const thresh = 1024;
+
+        if (!bytes) {return '0 KB'}
       
         if (Math.abs(bytes) < thresh) {
           return bytes + ' B';

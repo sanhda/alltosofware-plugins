@@ -8,14 +8,14 @@
         <div class="left-section">
             <ul class="categories">
                 {{#each categories}}
-                    <li><a href="">{{this.name}}</a></li>
+                    <li><a href="/?category={{this.name}}">{{this.name}}</a></li>
                 {{/each}}
             </ul>
         </div>
 
         <div class="right-section">
             <div class="search-container">
-                <input class="search-bar" type="text" placeholder="Search product here...">
+                <input id="search-bar" class="search-bar" type="text" placeholder="Search product here...">
             </div>
             <div class="content-section">
                 <div class="products" data-products="{{products}}">
@@ -24,7 +24,7 @@
                             <a href="/detail?id={{this._id}}">
                                 <div class="product-header">
                                 <img src="{{this.appIcon.0.path}}" alt="">
-                                <h3>{{this.name}}</h3>
+                                <h3>{{this.appName}}</h3>
                             </div>
 
                             <div class="product-description">
@@ -47,4 +47,4 @@
     </div>
 </div>
 
-{{!-- <script type="module" src="scripts/render/render-home.js"></script> --}}
+<script type="module" src="scripts/home.js"></script>

@@ -1,6 +1,6 @@
 const UserModel = require('../models/users');
 const productModel = require('../models/products');
-var FileSaver = require('file-saver');
+const categoryModel = require('../models/categories');
 
 class PulisherController {
     // [GET] create product
@@ -10,7 +10,14 @@ class PulisherController {
             product = await productModel.findById(req.query.productId).lean();
         }
 
-        res.render('pulisher', {product})
+        // find all categories
+        let categories = []
+        await categoryModel.find().lean().
+        then((loadedCategories) => {
+            categories = loadedCategories
+        })
+
+        res.render('pulisher', {product, categories})
     }
 
     // [POST] download product

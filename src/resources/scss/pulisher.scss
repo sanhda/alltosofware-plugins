@@ -187,3 +187,16 @@ textarea, input[type="text"] {
     }
 }
 
+.category-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */
+    gap: 10px; /* spacing between grid items */
+}
+
+.category-container label {
+    display: block;
+
+    input {
+        margin-right: 5px;
+    }
+}

@@ -1,7 +1,7 @@
 let currentPosition = 0;
-const slidesToShow = 7; // Number of slides to show at once
+const slidesToShow = 6; // Number of slides to show at once
 const slideStep = 1; // Number of slides to move per click
-const slideWidth = document.querySelector('.thumbnail-slider').clientWidth/slidesToShow
+const slideWidth = document.querySelector('.thumbnail-slider').clientWidth/slidesToShow // 10 is gap
 const slider = document.querySelector('.thumbnail-slider');
 const slidesCount = slider.children.length;
 const maxSlideIndex = slidesCount - slidesToShow;
@@ -23,7 +23,7 @@ function slide(direction) {
 
     toggleButtons()
 
-    currentPosition = -slideIndex * (slideWidth + 2);
+    currentPosition = -slideIndex * (slideWidth);
 
     slider.style.transform = `translateX(${currentPosition}px)`;
 }
@@ -112,6 +112,7 @@ $('.star-rating').click(() => ratingStar(this.event))
 // textarea automatic contain
 $(document).ready(() => {
     adjustTextareaHeight('.review-comment')
+    adjustTextareaHeight('#description')
 })
 
 // submit review

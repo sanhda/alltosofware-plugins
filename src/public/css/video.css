@@ -9,10 +9,8 @@
   margin: auto;
   border: 0;
   width: 100%;
-  height: auto; }
-
-#image-viewer {
-  display: none; }
+  height: auto;
+  border: solid 1px #84a9ee; }
 
 .thumbnail-content {
   position: relative;
@@ -31,7 +29,7 @@
   margin: 0;
   padding: 0;
   margin-top: 20px;
-  width: 1068px;
+  width: 100%;
   height: 140px;
   gap: 10px;
   transition: 800ms ease 0s; }
@@ -40,10 +38,10 @@
   float: left;
   list-style: none;
   position: relative;
-  border: solid 2px rgba(60, 60, 60, 0.25);
-  flex: 0 0 calc((100% - 60px) / 7);
-  /* Distribute equally among 7 items with space gap */
-  max-width: calc((100% - 60px) / 7);
+  border: solid 1px #84a9ee;
+  flex: 0 0 calc((100% - 50px) / 6);
+  /* Distribute equally among 6 items with space gap */
+  max-width: calc((100% - 50px) / 6);
   /* Set maximum width for each item */
   text-align: center; }
 
