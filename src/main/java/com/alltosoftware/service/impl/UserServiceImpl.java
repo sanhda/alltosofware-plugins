@@ -33,6 +33,8 @@ public class UserServiceImpl implements UserService {
         UserEntity user = new UserEntity();
         user.setUsername(registrationDto.getUsername());
         user.setEmail(registrationDto.getEmail());
+        user.setCompany(registrationDto.getCompany());
+        user.setCountry(registrationDto.getCountry());
         user.setPassword(passwordEncoder.encode(registrationDto.getPassword()));
         Role role = roleRepository.findByName("USER");
         user.setRoles(Arrays.asList(role));

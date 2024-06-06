@@ -1,0 +1,80 @@
+@import "_variables";
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  padding: 20px;
+
+  h2 {
+    font-weight: 700;
+    color: $allto-blue;
+  }
+}
+
+.left-side {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px;
+
+  .logo {
+    width: 200px;
+    height: auto;
+  }
+
+  .register-form {
+
+    padding: 32px;
+
+    .input {
+      font-weight: 400;
+      color: $input-color;
+      border: 1.5px solid $border-color;
+      border-radius: 10px;
+      padding: 10px;
+      line-height: 27px;
+    }
+
+    .input:focus {
+      outline: none !important;
+      border-color: $input-color;
+    }
+
+    .label {
+      margin-top: 10px;
+      margin-bottom: 5px;
+      background-color: white;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 21px;
+      color: #9A9A9A;
+    }
+
+    [type="submit"] {
+      margin-top: 20px;
+      background-color: $allto-blue;
+      color: white;
+    }
+
+    .sign-in {
+      margin-top: 20px;
+      text-align: center;
+
+      a {
+        color: $allto-blue;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.right-side {
+  background-image: url('../img/register_theme.png'); /* Set the path to your image */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the image */
+  border: 1px solid #ccc; /* Optional: border for visualization */
+  border-radius: 24px;
+}

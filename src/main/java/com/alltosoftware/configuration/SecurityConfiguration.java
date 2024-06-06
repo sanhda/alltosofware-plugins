@@ -42,7 +42,7 @@ public class SecurityConfiguration {
             .authorizeHttpRequests(
 //                    (authorize) -> authorize.anyRequest().permitAll()
                     (authorize) -> authorize.requestMatchers("/", "/login", "/register",
-                                                            "/css/**")
+                                                            "/css/**", "/img/**")
                                                 .permitAll()
 
                                             .requestMatchers("/account/home/**")
